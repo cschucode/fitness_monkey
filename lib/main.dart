@@ -14,7 +14,7 @@ void main() => runApp(MaterialApp(
         ),
         body: Center(
           child: Image(
-            image: AssetImage('images/monkey_logo.png'),
+            image: AssetImage('images/fm_app_icon.png'),
           ),
         ),
       ),
