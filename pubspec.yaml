@@ -21,3 +21,11 @@ flutter:
 
   assets:
     - images/
+
+  fonts:
+    - family: Bangers
+      fonts:
+        - asset: 'fonts/Bangers-Regular.ttf'
+    - family: 'Source Sans Pro'
+      fonts:
+        - asset: 'fonts/SourceSansPro-Regular.ttf'
