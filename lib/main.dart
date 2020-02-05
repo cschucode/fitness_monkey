@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'Addiction Recovery through Physical Fitness',
+                  'Let the Revolution Begin',
                   style: TextStyle(
                     color: Colors.indigo.shade500,
                     fontSize: 18.0,
