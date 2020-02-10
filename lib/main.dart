@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audio_cache.dart';
 
 void main() => runApp(MyApp());
 
@@ -69,7 +70,8 @@ class _MyAppState extends State<MyApp> {
               children: <Widget>[
                 FlatButton(
                   onPressed: () {
-                    displayMessage('monkey');
+                    final player = AudioCache();
+                    player.play('monkey1.wav');
                   },
                   child: CircleAvatar(
                     backgroundImage: AssetImage('images/fm_app_icon.png'),
