@@ -11,6 +11,7 @@ dependencies:
 
   cupertino_icons: ^0.1.2
   audioplayers: ^0.14.0
+  pedometer: ^1.0.0
 
 
 dev_dependencies:
