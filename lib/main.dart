@@ -1,8 +1,8 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:pedometer/pedometer.dart';
+
+import 'motivation_brain.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,41 +12,17 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  MotivationBrain motivationBrain = MotivationBrain();
   String motivationMessage = '';
-  final monkeySlogans = [
-    'Quit Monkeying Around!',
-    'That\'s Bananas!',
-    'Fitness Monkey Me!'
-  ];
-
-  final addictionSlogans = [
-    'One Day at a Time!',
-    'Do the Next Right Thing!',
-    'Principles Before Personalities!'
-  ];
-
-  final fitnessSlogans = [
-    'Buff Your Monkey!',
-    'Get You Some!',
-    'Time to Get Paid!',
-  ];
-
-  final communitySlogans = [
-    'It Takes a Village!',
-    'No One is an Island!',
-    'Come Together!',
-  ];
 
   void displayMessage(category) {
     setState(() {
       if (category == 'addiction') {
-        motivationMessage = addictionSlogans[Random().nextInt(3)];
+        motivationMessage = motivationBrain.getAddictionSlogan();
       } else if (category == 'fitness') {
-        motivationMessage = fitnessSlogans[Random().nextInt(3)];
+        motivationMessage = motivationBrain.getFitnessSlogan();
       } else if (category == 'community') {
-        motivationMessage = communitySlogans[Random().nextInt(3)];
-      } else if (category == 'monkey') {
-        motivationMessage = monkeySlogans[Random().nextInt(3)];
+        motivationMessage = motivationBrain.getCommunitySlogan();
       } else {
         motivationMessage = 'Error State';
       }
