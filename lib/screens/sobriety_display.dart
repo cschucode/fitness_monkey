@@ -1,23 +1,17 @@
 import 'package:fitness_monkey/constants.dart';
 import 'package:flutter/material.dart';
 
+import 'package:fitness_monkey/cleantime_brain.dart';
+
 class SobrietyDisplay extends StatelessWidget {
   SobrietyDisplay({this.sobrietyDate});
 
   final DateTime sobrietyDate;
 
-  String calculateDaysSober(DateTime dateInput) {
-    final sobrietyDate = dateInput;
-    final now = DateTime.now();
-    var days = now.difference(sobrietyDate).inDays;
-
-    if (days < 0) days = 0;
-
-    return days.toString();
-  }
-
   @override
   Widget build(BuildContext context) {
+    var calculate = new CleanTimeBrain(dateInput: sobrietyDate);
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.indigo.shade700,
@@ -28,18 +22,35 @@ class SobrietyDisplay extends StatelessWidget {
       body: Center(
         child: Container(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               Text(
-                'Days Sober',
+                'Years: ${calculate.getYearsSober()}',
                 style: kLabelTextStyle,
               ),
-              SizedBox(
-                height: 25.0,
+              Text(
+                'Months: ${calculate.getMonthsSober()}',
+                style: kLabelTextStyle,
               ),
               Text(
-                calculateDaysSober(sobrietyDate),
-                style: kLabelNumberStyle,
+                'Weeks: ${calculate.getWeeksSober()}',
+                style: kLabelTextStyle,
+              ),
+              Text(
+                'Days: ${calculate.getDaysSober()}',
+                style: kLabelTextStyle,
+              ),
+              Text(
+                'Hours: ${calculate.getHoursSober()}',
+                style: kLabelTextStyle,
+              ),
+              Text(
+                'Minutes: ${calculate.getMinutesSober()}',
+                style: kLabelTextStyle,
+              ),
+              Text(
+                'Seconds: ${calculate.getSecondsSober()}',
+                style: kLabelTextStyle,
               ),
             ],
           ),
