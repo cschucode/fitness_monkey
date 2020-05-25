@@ -9,7 +9,9 @@ class SobrietyDisplay extends StatelessWidget {
   String calculateDaysSober(DateTime dateInput) {
     final sobrietyDate = dateInput;
     final now = DateTime.now();
-    final days = now.difference(sobrietyDate).inDays;
+    var days = now.difference(sobrietyDate).inDays;
+
+    if (days < 0) days = 0;
 
     return days.toString();
   }

@@ -38,7 +38,6 @@ class _SobrietyInputState extends State<SobrietyInput> {
                 child: CupertinoDatePicker(
                   backgroundColor: Colors.indigo.shade100,
                   mode: CupertinoDatePickerMode.date,
-                  maximumDate: DateTime.now(),
                   onDateTimeChanged: (DateTime date) {
                     setState(() {
                       sobrietyDate = date;
