@@ -55,9 +55,8 @@ class _SobrietyInputState extends State<SobrietyInput> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => SobrietyDisplay(
-                          sobrietyDate: sobrietyDate,
-                        ),
+                        builder: (context) =>
+                            SobrietyDisplay(sobrietyDate: sobrietyDate),
                       ));
                 },
               ),
